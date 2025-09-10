@@ -8,7 +8,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copiar tu plantilla al contenedor
-COPY ./web/ .
+COPY ./webplantilla/ .
 
 # Exponer el puerto 8081
 EXPOSE 8081
