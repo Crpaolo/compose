@@ -1,17 +1,14 @@
-# Imagen base de NGINX
 FROM nginx:alpine
 
-# Directorio de trabajo por defecto de NGINX
 WORKDIR /usr/share/nginx/html
 
-# Limpiar archivos por defecto
+# Borrar archivos por defecto de NGINX
 RUN rm -rf ./*
 
-# Copiar tu plantilla al contenedor
-COPY ./webplantilla/ .
+# Copiar todos los archivos de la carpeta actual (webplantilla) al contenedor
+COPY . .
 
-# Exponer el puerto 8081
+# Exponer puerto 8081
 EXPOSE 8081
 
-# Configurar NGINX para escuchar en 8081
 CMD ["nginx", "-g", "daemon off;"]
