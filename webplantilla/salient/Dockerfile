@@ -9,6 +9,6 @@ RUN rm -rf ./*
 COPY . .
 
 # Exponer puerto 8081
-EXPOSE 8081
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
