@@ -1,14 +1,11 @@
 FROM nginx:alpine
-
 WORKDIR /usr/share/nginx/html
 
-# Borrar archivos por defecto de NGINX
+# Limpiar lo que viene por defecto
 RUN rm -rf ./*
 
-# Copiar todos los archivos de la carpeta actual (webplantilla) al contenedor
+# Copiar todo tu contenido de la plantilla
 COPY . .
 
-# Exponer puerto 8081
-EXPOSE 8081
-
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
